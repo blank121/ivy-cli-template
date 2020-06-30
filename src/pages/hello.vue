@@ -7,7 +7,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 @Component({})
 export default class App extends Vue {
-  text: string = 'hello'
+  text: string = 'hello ivy-h5-cli'
   async created() {
     console.log('hello')
   }
