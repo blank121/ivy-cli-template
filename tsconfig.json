@@ -1,36 +1,40 @@
 {
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
+    "target": "esnext",
+    "module": "esnext",
+    "strict": false,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
     "experimentalDecorators": true,
-    "target": "es2017",
-    "module": "commonjs",
-    "noImplicitAny": false,
-    "removeComments": false,
-    "rootDir": ".",
-    "outDir": "dist",
-    "noLib": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "allowJs": true,
-    "baseUrl": "src",
-    "plugins": [
-      {
-        "name": "tslint-language-service",
-        "alwaysShowRuleFailuresAsWarnings": false,
-        "ignoreDefinitionFiles": true
-        //"configFile": "../tslint.json",
-        //"disableNoUnusedVariableRule": false
-      }
+    "baseUrl": ".",
+    "outDir": "dist",
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
     ]
   },
   "include": [
-    "src/**/*",
-    "node_modules/@ivy/api/**/*"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
   ],
   "exclude": [
-    "index.js",
-    "ts-node*",
-    ".idea",
-    "dist",
-    ".git"
+    "node_modules"
   ]
 }
