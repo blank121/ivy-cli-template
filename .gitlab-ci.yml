@@ -1,0 +1,40 @@
+variables:
+  NAMESPACE: ivy-web
+  MASTER_REPLICAS: 4
+  ALL_REQUEST_CPU: '5m'
+  ALL_REQUEST_MEMEORY: '20Mi'
+  ALL_LOGSTORE_TAG: 'api-log'
+
+image: registry-vpc.cn-beijing.aliyuncs.com/ivydad/docker-base:latest
+stages:
+  - build
+  - deploy
+
+build_job:
+  only:
+    - test
+    - master
+    - release
+    - /^test-.*$/
+    - /^master-.*$/
+  stage: build
+  services:
+    - docker:18.09-dind
+  tags:
+    - k8s-runner
+  script:
+    - wget -O- http://assets-admin.ivydad.com/@ivy/scripts/gitlab-ci2/ci.js | node
+deploy_job:
+  only:
+    - test
+    - master
+    - release
+    - /^test-.*$/
+    - /^master-.*$/
+  stage: deploy
+  services:
+    - docker:18.09-dind
+  tags:
+    - k8s-runner
+  script:
+    - wget -O- http://assets-admin.ivydad.com/@ivy/scripts/gitlab-ci2/ci.js | node

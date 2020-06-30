@@ -1,0 +1,94 @@
+@import url(../node_modules/@ivy/fts/styles/common.less);
+@p: #da277c;
+@t1: #2c2c2c;
+@t2: #787878;
+@bg: #bec1fe;
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_467855_4iyu6vt4evf.eot');
+  src: url('//at.alicdn.com/t/font_467855_4iyu6vt4evf.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_467855_4iyu6vt4evf.woff') format('woff'),
+  url('//at.alicdn.com/t/font_467855_4iyu6vt4evf.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_467855_4iyu6vt4evf.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.gradient{
+  background-image:linear-gradient( 90deg, #dc50b1 0%, #da2377 99%);
+}
+button{
+  background-color: transparent;
+  border: none;
+  .link;
+}
+.tranAnimate(@ms: 0.2s) {
+  transition-duration: @ms;
+  -webkit-transition-duration: @ms;
+  -moz-transition-duration: @ms;
+  -o-transition-duration: @ms;
+}
+.pad30 {
+  padding: .88rem;
+}
+.my-header{
+  height: 137px;
+  line-height: 137px;
+  font-size: 36px;
+  font-weight: bold;
+  border-bottom: 1px solid #f4f4f4;
+}
+.button{
+  .gradient;
+  border-radius: 2.94rem;
+  color: #fff;
+  text-align: center;
+  &.large{
+    height: 3.18rem;
+    width: 100%;
+    display: block;
+    font-size: 1.24rem;
+    font-weight: 600;
+  }
+}
+.mint-checklist {
+  .mint-checklist-title{
+    display: none;
+  }
+  .mint-cell {
+    background: none !important;
+    .mint-checklist-label {
+      padding: 0;
+      font-size: 28px;
+      font-weight: normal;
+    }
+  }
+}
+.mint-checkbox-input:checked + .mint-checkbox-core {
+  background-color: #00B097 !important;
+  border-color: #00B097 !important;
+  box-shadow: 0 2px 6px 0 rgba(255, 180, 80, 0.5);
+}
+.mint-checkbox-core:after{
+  top:20% !important;
+  left:35% !important;
+}
+@boldFontWeight: 800;
+@lightFontWeight: 300;
+@normalFontWeight: 400;
+@commonColor: #ffb450;
+.display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-contain{
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

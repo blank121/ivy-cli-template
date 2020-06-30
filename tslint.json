@@ -1,0 +1,43 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "forin": false,
+    "no-empty": false,
+    "no-unused-expression": [
+      true,
+      "allow-fast-null-checks"
+    ],
+    "max-classes-per-file": false,
+    "trailing-comma": false,
+    "variable-name": false,
+    "member-access": false,
+    "max-line-length": false,
+    "no-bitwise": false,
+    "prefer-const": false,
+    "curly": false,
+    "arrow-parens": false,
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "no-console": false,
+    "quotemark": false,
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false
+  }
+}

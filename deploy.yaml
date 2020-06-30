@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: PROJECT_NAME-ingress
+  namespace: NAMESPACE
+spec:
+  rules:
+    - host: 'HOST_URL_A'
+      http:
+        paths:
+          - backend:
+              serviceName: PROJECT_NAME-svc
+              servicePort: 80
+            path: /ORIGIN_PROJECT/
