@@ -1,3 +1,7 @@
+const personPreifx = process.env.npm_config_argv && JSON.parse(process.env.npm_config_argv).original[1]
+const commonApiConfig = require('./src/config/webpack')
+const origin = personPreifx ? commonApiConfig.backend.replace('m', `${personPreifx}.person`) : commonApiConfig.backend
+console.log('origin', origin)
 module.exports = {
   baseUrl: '/' + process.cwd().split('/').slice(-1)[0],
   chainWebpack: config => {
@@ -11,7 +15,7 @@ module.exports = {
   devServer: {
     proxy: {
       "/api": {
-        target: require('./src/config/webpack').backend,
+        target: origin,
       }
     }
   }

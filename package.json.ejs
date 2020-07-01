@@ -5,7 +5,7 @@
   "scripts": {
     "env": "DESC=`npm run desc | tail -n1` node gen.js",
     "desc": "echo 构建时间: `date +'%Y-%m-%d %H:%M:%S'` `git log -n 1 HEAD --pretty=format:'版本: %h 时间: %ad 作者:%an 注释:%s' --date=iso`",
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve ./src/main.ts",
     "start": "NODE_ENV=test yarn env && yarn serve",
     "dev": "NODE_ENV=development yarn env && yarn serve",
     "production": "NODE_ENV=production yarn env && yarn serve",
